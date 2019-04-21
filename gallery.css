@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: #3c3c3c;
+}
+
+
+.card {
+  position: relative;
+  
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Light blue cover above the slide show*/
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 900;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(140, 22, 115, 0.2);
+}
+
+.card_part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  transform: translateX( 700px );
+  background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/150929101049-black-coffee-stock-super-tease.jpg);
+  
+  animation: opaqTransition 4s cubic-bezier(0, 0, 0, 0.97) infinite;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.card_part.card_part-two {
+  z-index: 6;
+  background-image: url(http://ileauxepices.com/blog/wp-content/uploads/2016/05/caf%C3%A9-touba.jpg);
+  animation-delay: 1s;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card_part.card_part-three {
+  z-index: 5;
+  background-image: url(https://www.simplystacie.net/wp-content/uploads/2015/07/Coconut-Mocha-Frappuccino-wide.jpg);
+  animation-delay: 2s;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card_part.card_part-four {
+  z-index: 4;
+  background-image: url(https://i.ytimg.com/vi/_XW8Cy84c80/maxresdefault.jpg);
+  animation-delay: 3s;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card_part.card_part-five {
+    z-index: 3;
+    background-image: url(https://static1.squarespace.com/static/576fd1efd482e9967da86e5f/5b9ed640898583afcc0aab30/5b9ed674b8a0455bce36800a/1537751624599/Photo+Sep+20%2C+7+08+38+AM.jpg?format=750w);
+    animation-delay: 4s;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+@keyframes opaqTransition {
+  3% { transform: translateX( 0 ); }
+  25% { transform: translateX( 0 ); }
+  28% { transform: translateX( -700px ); }
+  100% { transform: translateX( -700px ); }
+}
